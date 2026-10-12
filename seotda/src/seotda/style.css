@@ -1,0 +1,140 @@
+/* 전체 테이블 배경 느낌 */
+.root {
+    -fx-background-color: linear-gradient(to bottom, #064e3b, #022c22);
+}
+/* 상단 바 */
+.top-bar {
+    -fx-background-color: rgba(0, 0, 0, 0.35);
+    -fx-padding: 10 16 8 16;
+    -fx-border-color: rgba(255, 255, 255, 0.20);
+    -fx-border-width: 0 0 1 0;
+}
+
+.title-label {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to bottom, #ffe08a, #d9a441);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.55), 8, 0.3, 1, 2);
+    -fx-padding: 4 0 2 0;
+}
+/* ----------- 상단 안내 문구 ----------- */
+.top-info-label {
+    -fx-font-size: 15px;
+    -fx-text-fill: rgba(255, 255, 255, 0.85);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.65), 6, 0.3, 1, 1);
+}
+
+.status-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #e5e7eb;
+}
+/* ----------- 상단 전체 박스 ----------- */
+.top-box {
+    -fx-background-color: rgba(0, 0, 0, 0.30);
+    -fx-background-radius: 12;
+    -fx-padding: 16 20 14 20;
+}
+
+/* 가운데 카드/족보/결과 */
+.center-panel .label {
+    -fx-text-fill: #f9fafb;
+}
+
+.card-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.rank-label {
+    -fx-font-size: 18px;
+}
+
+.result-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #facc15;
+}
+
+/* 하단 버튼 영역 */
+.bottom-bar {
+    -fx-background-color: rgba(0, 0, 0, 0.35);
+    -fx-padding: 10 0 16 0;
+    -fx-border-color: rgba(255, 255, 255, 0.25);
+    -fx-border-width: 1 0 0 0;
+}
+
+/* 공통 버튼 스타일 */
+.button {
+    -fx-background-radius: 20;
+    -fx-padding: 6 20 6 20;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-color: #16a34a;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 8, 0, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: #22c55e;
+}
+
+.button:pressed {
+    -fx-background-color: #15803d;
+}
+
+/* ========= 카드 UI ========= */
+
+/* 카드 두 장을 감싸는 박스 */
+.card-box {
+    -fx-padding: 20 0 10 0;
+}
+
+/* 카드 한 장 모양 */
+.card {
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-background-color: linear-gradient(to bottom, #f9fafb, #d4d4d8);
+    -fx-border-color: #111827;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 10, 0, 0, 3);
+}
+
+/* 카드 안의 숫자/문자 */
+.card-text {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+/* ----------- 족보 표시 스타일 ----------- */
+.rank-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to bottom, #ffe08a, #d9a441);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 4, 0.2, 1, 1);
+    -fx-padding: 6 12;
+}
+
+/* ----------- 결과 표시(승리/패배) 반투명 패널 ----------- */
+.result-box {
+    -fx-background-color: rgba(0, 0, 0, 0.35);
+    -fx-padding: 10 18;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.25);
+    -fx-border-width: 1.2;
+}
+
+.result-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f8f8f8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 6, 0.3, 1, 1);
+}
+
+/* 승리/패배에 색깔을 주고 싶으면 */
+.result-win {
+    -fx-text-fill: #8be67c; /* 연녹색 승리 */
+}
+.result-lose {
+    -fx-text-fill: #ff7474; /* 연빨강 패배 */
+}

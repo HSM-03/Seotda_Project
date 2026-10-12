@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="seotda.RegisterController">
+
+    <center>
+        <StackPane prefWidth="1000" prefHeight="700" BorderPane.alignment="CENTER">
+
+            <!-- 🎴 배경 이미지 (로그인 화면과 동일) -->
+            <ImageView fitWidth="1100" fitHeight="700" preserveRatio="true">
+                <image>
+                    <Image url="@/seotda/LoginBackground/login.png" />
+                </image>
+            </ImageView>
+
+            <!-- 📝 회원가입 카드 (로그인 카드와 동일 스타일) -->
+            <VBox alignment="CENTER" spacing="16"
+                  maxWidth="420"
+                  StackPane.alignment="CENTER"
+                  translateY="130"
+                  style="-fx-background-color: transparent;
+                         -fx-background-radius: 28;
+                         -fx-padding: 26 34;
+                         -fx-border-color: transparent;
+                         -fx-border-radius: 28;
+                         -fx-border-width: 0;">
+                <effect>
+                    <DropShadow radius="20" offsetY="6"
+                                color="rgba(0,0,0,0.8)"/>
+                </effect>
+
+                <!-- 타이틀 -->
+				<HBox alignment="CENTER"
+      				style="-fx-background-color: rgba(0,0,0,0.35);
+             				-fx-background-radius: 20;
+             				-fx-padding: 6 20;">
+    				<Label text="회원가입"
+           				style="-fx-text-fill: #FFE29F;
+                  				-fx-font-size: 22px;
+                  				-fx-font-weight: bold;">
+        				<effect>
+            				<DropShadow radius="18"
+                        				color="rgba(255,220,150,0.9)"
+                        				offsetY="2"/>
+        				</effect>
+    				</Label>
+				</HBox>
+
+                <!-- 아이디 -->
+                <TextField fx:id="idField"
+                           promptText="아이디"
+                           prefWidth="360"
+                           style="
+                               -fx-background-color: rgba(255,255,255,0.08);
+                               -fx-text-fill: #FDFDFD;
+                               -fx-prompt-text-fill: rgba(240,240,240,0.55);
+                               -fx-background-radius: 20;
+                               -fx-border-radius: 20;
+                               -fx-border-color: rgba(255, 220, 170, 0.65);
+                               -fx-border-width: 1.4;
+                               -fx-padding: 8 14;
+                               -fx-font-size: 14px;
+                           "/>
+
+                <!-- 비밀번호 -->
+                <PasswordField fx:id="pwField"
+                               promptText="비밀번호"
+                               prefWidth="360"
+                               style="
+                                   -fx-background-color: rgba(255,255,255,0.08);
+                                   -fx-text-fill: #FDFDFD;
+                                   -fx-prompt-text-fill: rgba(240,240,240,0.55);
+                                   -fx-background-radius: 20;
+                                   -fx-border-radius: 20;
+                                   -fx-border-color: rgba(255, 220, 170, 0.65);
+                                   -fx-border-width: 1.4;
+                                   -fx-padding: 8 14;
+                                   -fx-font-size: 14px;
+                               "/>
+
+                <!-- 비밀번호 확인 -->
+                <PasswordField fx:id="pwCheckField"
+                               promptText="비밀번호 확인"
+                               prefWidth="360"
+                               style="
+                                   -fx-background-color: rgba(255,255,255,0.08);
+                                   -fx-text-fill: #FDFDFD;
+                                   -fx-prompt-text-fill: rgba(240,240,240,0.55);
+                                   -fx-background-radius: 20;
+                                   -fx-border-radius: 20;
+                                   -fx-border-color: rgba(255, 220, 170, 0.65);
+                                   -fx-border-width: 1.4;
+                                   -fx-padding: 8 14;
+                                   -fx-font-size: 14px;
+                               "/>
+
+                <!-- 이름 / 닉네임 -->
+                <TextField fx:id="nameField"
+                           promptText="이름 / 닉네임"
+                           prefWidth="360"
+                           style="
+                               -fx-background-color: rgba(255,255,255,0.08);
+                               -fx-text-fill: #FDFDFD;
+                               -fx-prompt-text-fill: rgba(240,240,240,0.55);
+                               -fx-background-radius: 20;
+                               -fx-border-radius: 20;
+                               -fx-border-color: rgba(255, 220, 170, 0.65);
+                               -fx-border-width: 1.4;
+                               -fx-padding: 8 14;
+                               -fx-font-size: 14px;
+                           "/>
+
+                <!-- 버튼 영역 (로그인 버튼 스타일과 통일) -->
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="가입"
+                            onAction="#handleRegister"
+                            prefWidth="150"
+                            style="
+                                -fx-background-color: linear-gradient(to right, #D54C4C, #E6843A);
+                                -fx-text-fill: white;
+                                -fx-font-weight: bold;
+                                -fx-font-size: 14px;
+                                -fx-background-radius: 20;
+                                -fx-cursor: hand;
+                                -fx-padding: 6 0;
+                                -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 12, 0.2, 0, 3);
+                            "/>
+
+                    <Button text="취소"
+                            onAction="#handleCancel"
+                            prefWidth="150"
+                            style="
+                                -fx-background-color: rgba(255,255,255,0.2);
+                                -fx-text-fill: #FDFDFD;
+                                -fx-font-weight: bold;
+                                -fx-font-size: 14px;
+                                -fx-background-radius: 20;
+                                 -fx-border-radius: 20;
+                                -fx-border-color: rgba(255,220,170,0.65);
+                                -fx-border-width: 1.3;
+                                -fx-cursor: hand;
+                                -fx-padding: 6 0;
+                            "/>
+                </HBox>
+
+                <!-- (선택) 상태 메시지 라벨 하나 두고 싶으면 여기 추가 가능
+                <Label fx:id="registerStatusLabel"
+                       text=""
+                       style="-fx-text-fill: #ffb3b3;
+                              -fx-font-size: 12px;
+                              -fx-font-weight: bold;"/>
+                -->
+
+            </VBox>
+
+        </StackPane>
+    </center>
+
+</BorderPane>

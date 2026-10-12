@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="seotda.MainController"
+            prefWidth="800" prefHeight="450"
+            style="
+                -fx-background-image: url('/seotda/MainBackground/main.png');
+                -fx-background-size: cover;
+                -fx-background-position: center center;
+                -fx-background-repeat: no-repeat;
+            ">
+
+    <!-- TOP: 타이틀 + 상태 -->
+	<top>
+    	<!-- 상단 전체를 반투명 박스로 감싸기 -->
+    	<VBox spacing="4" alignment="CENTER"
+          	BorderPane.alignment="CENTER"
+          	styleClass="top-box">
+
+        	<padding>
+            	<Insets top="14" right="16" bottom="10" left="16"/>
+        	</padding>
+
+        	<!-- 제목 -->
+        	<Label text="인하섯다" styleClass="title-label"/>
+        	
+        	<!-- 🔹 로그인한 유저 이름 표시 라벨 추가 -->
+        	<Label fx:id="userNameLabel"
+               	text="" 
+               	style="-fx-text-fill: #fbbf24;
+                      	-fx-font-size: 14px;
+                      	-fx-font-weight: bold;"/>
+
+        	<!-- 안내 문구 (두 줄 가능) -->
+        	<Label fx:id="statusLabel"
+               text="다음 판을 하려면 '게임 시작'을 누르거나, 종료하시려면 '나가기'를 선택하세요"
+               styleClass="top-info-label"
+               wrapText="true"
+               maxWidth="620"/>
+
+    	</VBox>
+	</top>
+
+
+    <!-- CENTER: 위 2장 / 가운데 1장 / 아래 2장 + 족보/결과/버튼 -->
+    <center>
+        <VBox spacing="18" alignment="CENTER" BorderPane.alignment="CENTER">
+            <padding>
+                <!-- 카드 전체를 조금만 내려놓기 -->
+                <Insets top="40" right="0" bottom="20" left="0"/>
+            </padding>
+
+            <!-- 🔹 1층: 상대 카드 2장 -->
+            <HBox fx:id="opponentBox" spacing="20" alignment="CENTER" styleClass="card-box">
+                <children>
+                    <ImageView fx:id="opCard1Image"
+                               fitWidth="80" fitHeight="120" preserveRatio="true"/>
+                    <ImageView fx:id="opCard2Image"
+                               fitWidth="80" fitHeight="120" preserveRatio="true"/>
+                </children>
+            </HBox>
+
+            <!-- 🔹 2층: 가운데 덱 1장 -->
+            <HBox alignment="CENTER">
+                <children>
+                    <ImageView fx:id="deckImage"
+                               fitWidth="90" fitHeight="135"
+                               preserveRatio="true"
+                               visible="true"/>
+                </children>
+            </HBox>
+
+            <!-- 🔹 3층: 내 카드 2장 -->
+            <HBox fx:id="myCardBox" spacing="20" alignment="CENTER" styleClass="card-box">
+                <children>
+                    <ImageView fx:id="card1Image"
+                               fitWidth="90" fitHeight="135" preserveRatio="true"/>
+                    <ImageView fx:id="card2Image"
+                               fitWidth="90" fitHeight="135" preserveRatio="true"/>
+                </children>
+            </HBox>
+
+            <!-- 🔹 족보 / 결과 -->
+                        <!-- 🔹 족보 / 결과 영역 -->
+            <VBox spacing="6" alignment="CENTER">
+                <!-- 족보 텍스트 (황금 느낌) -->
+                <Label fx:id="rankLabel"
+                       text="족보: -"
+                       styleClass="rank-label"/>
+
+                <!-- 결과 텍스트를 담는 반투명 박스 -->
+                <HBox alignment="CENTER" styleClass="result-box">
+                    <Label fx:id="resultLabel"
+                           text="결과: -"
+                           styleClass="result-label"/>
+                </HBox>
+            </VBox>
+
+            <!-- 🔹 버튼들 -->
+            <HBox spacing="12" alignment="CENTER">
+                <Button fx:id="startButton" text="게임 시작"
+                        onAction="#handleStart"/>
+                <Button fx:id="exitButton" text="나가기"
+                        onAction="#handleExit"/>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>
