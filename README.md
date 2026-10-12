@@ -127,13 +127,6 @@ Eclipse에서 `seotda` 프로젝트의 Build Path에 위 라이브러리를 추�
 
 <br>
 
-## 📸 실행 화면
-
-<!-- 스크린샷을 찍어서 아래처럼 넣어주세요 -->
-<!-- <img src="images/login.png" width="45%"> <img src="images/game.png" width="45%"> -->
-
-<br>
-
 ## 💡 배운 점 / 개선하고 싶은 점
 
 - 서버와 클라이언트가 같은 순서로 메시지를 주고받도록 **간단한 텍스트 프로토콜을 직접 설계**해본 경험
